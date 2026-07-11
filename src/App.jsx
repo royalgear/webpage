@@ -1,22 +1,15 @@
-import { useEffect, useState } from 'react';
 import Card from './components/Card';
-import ThemeToggle from './components/ThemeToggle';
+import NotFound from './components/NotFound';
 
-function getInitialTheme() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+function isHomePath(pathname) {
+  const path = pathname.replace(/\/+$/, '') || '/';
+  return path === '/' || path === '/index.html';
 }
 
 export default function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
+  if (!isHomePath(window.location.pathname)) {
+    return <NotFound />;
+  }
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  return (
-    <>
-      <ThemeToggle theme={theme} onChange={setTheme} />
-      <Card />
-    </>
-  );
+  return <Card />;
 }

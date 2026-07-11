@@ -201,6 +201,46 @@
   border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
 }
 
+.card--not-found {
+  padding-top: 1.5rem;
+}
+
+.hero-title--sm {
+  font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+  line-height: 1;
+}
+
+.hero-title-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-title-link:hover {
+  color: var(--accent);
+}
+
+.not-found-block {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.not-found-code {
+  font-size: clamp(1.85rem, 5.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.not-found-label {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
 .footer {
   position: relative;
   z-index: 1;
@@ -211,6 +251,10 @@
   color: var(--text-muted);
   letter-spacing: 0.02em;
   text-align: center;
+}
+
+.footer--sm p {
+  font-size: 0.5rem;
 }
 
 @media (max-width: 480px) {
