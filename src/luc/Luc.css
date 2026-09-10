@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+
+#root:has(.luc-site) {
+  display: block;
+  padding: 0;
+  min-height: 100vh;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+html:has(.luc-site),
+body:has(.luc-site) {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body:has(.luc-site) {
+  font-family: 'Figtree', 'Helvetica Neue', sans-serif;
+  background: #f3eee6;
+  background-image: none;
+  color: #241c18;
+}
+
+.luc-site {
+  --paper: #f3eee6;
+  --paper-deep: #e9e0d3;
+  --ink: #241c18;
+  --muted: #5c5148;
+  --crayon: #c43c2a;
+  --crayon-deep: #9e2f21;
+  --line: #d8cbb8;
+  --panel: #fffaf3;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Figtree', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(196, 60, 42, 0.07), transparent 50%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.luc-skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  background: var(--ink);
+  color: var(--panel);
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+}
+
+.luc-skip:focus {
+  top: 1rem;
+}
+
+.luc-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--paper) 92%, white);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.luc-header-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+}
+
+.luc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.luc-brand-mark {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.luc-brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.luc-brand-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.luc-footer-place {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.luc-menu-btn {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.luc-menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 14px;
+}
+
+.luc-menu-icon span {
+  display: block;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+.luc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.1rem;
+}
+
+.luc-nav-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 550;
+  font-size: 0.98rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.luc-nav-link:hover,
+.luc-nav-link:focus-visible,
+.luc-nav-link.is-active {
+  border-bottom-color: var(--crayon);
+}
+
+.luc-main {
+  flex: 1;
+}
+
+.luc-hero,
+.luc-page,
+.luc-section,
+.luc-band,
+.luc-split,
+.luc-feature,
+.luc-two {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+}
+
+.luc-hero {
+  text-align: center;
+  padding-block: 3.5rem 3rem;
+}
+
+.luc-hero-logo {
+  width: 8.5rem;
+  height: 8.5rem;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 0.6rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 10px 30px rgba(36, 28, 24, 0.08);
+}
+
+.luc-hero h1,
+.luc-page h1,
+.luc-section h2,
+.luc-split h2,
+.luc-feature h2,
+.luc-panel h2,
+.luc-prose-block h2,
+.luc-two h2,
+.luc-artist-card h2,
+.luc-artist-card h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.luc-hero h1 {
+  font-size: clamp(2.15rem, 8vw, 4.4rem);
+  max-width: min(14ch, 100%);
+  margin: 0.35rem auto 0.9rem;
+  overflow-wrap: break-word;
+}
+
+.luc-eyebrow,
+.luc-kicker {
+  color: var(--crayon-deep);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.luc-lead {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.luc-hero .luc-lead {
+  margin: 0 auto;
+}
+
+.luc-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.luc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 650;
+  font-size: 1rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px 12px 999px 18px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.luc-btn--primary {
+  background: var(--crayon);
+  border-color: var(--crayon);
+  color: #fffaf3;
+}
+
+.luc-btn:hover,
+.luc-btn:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fffaf3;
+}
+
+.luc-band {
+  padding-bottom: 3rem;
+}
+
+.luc-quote {
+  margin: 0;
+  background: var(--panel);
+  border-left: 6px solid var(--crayon);
+  padding: 1.5rem 1.6rem;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(36, 28, 24, 0.05);
+}
+
+.luc-section {
+  padding-block: 1rem 3.5rem;
+}
+
+.luc-section-head,
+.luc-page-head {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.luc-section-head--end {
+  margin-left: auto;
+  text-align: right;
+}
+
+.luc-page {
+  padding-block: 2.5rem 4rem;
+}
+
+.luc-page--artist {
+  width: min(952px, 100%);
+}
+
+.luc-narrow,
+.luc-page-head.luc-narrow {
+  max-width: 46rem;
+}
+
+.luc-page h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  margin: 0.3rem 0 0.8rem;
+}
+
+.luc-artist-head {
+  padding-left: 2.6rem;
+}
+
+.luc-artist-head .luc-artist-links {
+  padding-left: 1.4rem;
+}
+
+.luc-artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+
+.luc-artist-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  border-radius: 2px 18px 2px 14px;
+  min-height: 100%;
+}
+
+.luc-artist-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 22%;
+  background: var(--paper-deep);
+}
+
+.luc-artist-card-body {
+  padding: 1rem 1.05rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.luc-artist-card h2,
+.luc-artist-card h3 {
+  font-size: 1.35rem;
+}
+
+.luc-artist-card p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.luc-text-link {
+  color: var(--crayon-deep);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: auto;
+}
+
+.luc-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 1.25rem;
+  padding-bottom: 4rem;
+  align-items: stretch;
+}
+
+.luc-split > div,
+.luc-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+  border-radius: 2px 16px 2px 12px;
+}
+
+.luc-panel--wide {
+  margin-top: 1.5rem;
+}
+
+.luc-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.luc-prose,
+.luc-prose-block p,
+.luc-feature p,
+.luc-two p {
+  color: var(--ink);
+  margin: 0.7rem 0;
+}
+
+.luc-prose-block {
+  margin: 2rem 0;
+}
+
+.luc-prose-block h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.luc-crumb {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.luc-crumb a {
+  color: inherit;
+}
+
+.luc-meta,
+.luc-artist-links {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.luc-artist-links a {
+  color: var(--crayon-deep);
+  font-weight: 650;
+}
+
+.luc-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.luc-ig-icon {
+  width: 0.95em;
+  height: 0.95em;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.luc-works {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.luc-work {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  border-radius: 2px 18px 2px 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.luc-work:only-child {
+  max-width: 36rem;
+}
+
+.luc-work a {
+  display: block;
+  line-height: 0;
+}
+
+.luc-work img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--paper-deep);
+}
+
+.luc-work figcaption {
+  padding: 1rem 1.1rem 1.2rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.luc-gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  grid-auto-rows: 11.5rem;
+  gap: 0.7rem;
+}
+
+.luc-gallery-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px 14px 2px 10px;
+  background: var(--paper-deep);
+  color: inherit;
+  text-decoration: none;
+}
+
+.luc-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.luc-gallery-item--feature {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.luc-photo {
+  margin: 0 0 2.2rem;
+}
+
+.luc-photo img {
+  width: 100%;
+  display: block;
+  border-radius: 2px 18px 2px 12px;
+}
+
+.luc-photo figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.luc-feature {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--crayon);
+  padding: 1.6rem 1.7rem;
+  margin-bottom: 2rem;
+  border-radius: 2px 16px 2px 8px;
+}
+
+.luc-feature--photo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0.9rem 1.1rem 0.9rem 0.9rem;
+}
+
+.luc-feature--photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 2px 12px 2px 8px;
+  background: var(--paper-deep);
+}
+
+.luc-feature h2 {
+  font-size: 2rem;
+  margin: 0.2rem 0 0.7rem;
+}
+
+.luc-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.luc-chip-list,
+.luc-plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.luc-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.luc-chip-list li {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.luc-plain-list li + li {
+  margin-top: 0.55rem;
+}
+
+.luc-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.luc-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.luc-form input,
+.luc-form select,
+.luc-form textarea {
+  font: inherit;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 8px;
+}
+
+.luc-form input:focus,
+.luc-form select:focus,
+.luc-form textarea:focus,
+.luc-btn:focus-visible,
+.luc-nav-link:focus-visible,
+.luc-brand:focus-visible,
+.luc-menu-btn:focus-visible,
+.luc-artist-card:focus-visible,
+.luc-work a:focus-visible,
+.luc-text-link:focus-visible,
+.luc-skip:focus {
+  outline: 3px solid var(--crayon);
+  outline-offset: 2px;
+}
+
+.luc-footer {
+  border-top: 1px solid var(--line);
+  background: #efe6d8;
+  margin-top: auto;
+}
+
+.luc-footer-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 1.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.luc-footer-brand {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.luc-footer-brand img {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 0.15rem;
+}
+
+.luc-footer-name {
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.luc-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  align-items: center;
+}
+
+.luc-footer-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.luc-footer-nav a:hover,
+.luc-footer-nav a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .luc-brand-mark {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .luc-brand {
+    flex: 1 1 auto;
+  }
+
+  .luc-brand-name {
+    font-size: 0.88rem;
+    max-width: 10.5rem;
+  }
+
+  .luc-hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .luc-lead {
+    font-size: 1.05rem;
+  }
+
+  .luc-menu-btn {
+    display: inline-flex;
+  }
+
+  .luc-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 0.6rem 1rem 1rem;
+    gap: 0.2rem;
+  }
+
+  .luc-nav--open {
+    display: flex;
+    background: var(--paper);
+    box-shadow: 0 16px 28px rgba(36, 28, 24, 0.08);
+  }
+
+  .luc-nav-link {
+    padding: 0.55rem 0;
+  }
+
+  .luc-split,
+  .luc-two,
+  .luc-works,
+  .luc-support-grid,
+  .luc-feature--photo,
+  .luc-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .luc-gallery {
+    grid-auto-rows: 14rem;
+  }
+
+  .luc-gallery-item--feature {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 16rem;
+  }
+
+  .luc-hero {
+    padding-top: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luc-site * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
